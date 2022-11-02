@@ -1,8 +1,11 @@
 "use client"
 
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 
 export default function CreateNote() {
+  const router = useRouter()
+
   const [title, setTitle] = useState("")
   const [content, setContent] = useState("")
 
@@ -15,6 +18,8 @@ export default function CreateNote() {
 
     setTitle("")
     setContent("")
+
+    router.refresh()
   }
 
   return (
