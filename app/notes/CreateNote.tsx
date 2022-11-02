@@ -1,9 +1,28 @@
 "use client"
 
+import { useState } from "react"
+
 export default function CreateNote() {
+  const [title, setTitle] = useState("")
+  const [content, setContent] = useState("")
+
   return (
-    <div>
-      <h1>Create Note</h1>
-    </div>
+    <form>
+      <h3>Create Note</h3>
+
+      <input
+        type="text"
+        placeholder="Title"
+        value={title}
+        onChange={e => setTitle(e.target.value)}
+      />
+      <textarea
+        placeholder="Content"
+        value={content}
+        onChange={e => setContent(e.target.value)}
+      />
+
+      <button type="submit">Create Note</button>
+    </form>
   )
 }
